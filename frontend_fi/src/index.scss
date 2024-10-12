@@ -1,0 +1,112 @@
+$breakpoints: ("mobile": 250px, "mini-tablet": 481px, "tablet": 768px, "laptop": 1025px, "tv": 1281px);
+
+$mainBackground:#121D43;
+$purpleText:#552B9D;
+$highlightedPurple:#8140A0;
+$grayText:#757897;
+
+@mixin breakpoint-max($bp:0) {
+    @media (max-width: $bp) {
+        @content
+    }
+}
+
+;
+
+@mixin flex($align:center, $direction:row, $justify:center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;900&display=swap');
+
+$dmSans:'DM Sans',
+sans-serif;
+$lato:'Lato',
+sans-serif;
+$syne: 'Syne',
+sans-serif;
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: $dmSans;
+}
+
+body {
+    background-color: $mainBackground;
+
+    .query {
+        font-size: 1rem;
+        color: $grayText;
+        @include flex;
+        min-height: 100vh;
+
+        div {
+            @include flex($direction:column);
+            gap: 10px;
+
+            span {
+                font-size: clamp(2rem, 2rem + 4.6875vw, 5rem);
+                animation: wave 2s ease-in-out infinite;
+            }
+
+            p {
+                font-family: $syne;
+                font-size: clamp(1rem, 1rem + 3.125vw, 3rem);
+                padding: 1rem;
+
+                b {
+                    font-weight: 900;
+                }
+            }
+
+            @keyframes wave {
+
+                0%,
+                100% {
+                    transform: rotate(5deg);
+                }
+
+                50% {
+                    transform: rotate(-2deg);
+                }
+            }
+        }
+
+        @media only screen and (min-device-width : 102px) {
+            display: none;
+        }
+    }
+
+    .container {
+        min-height: 100%;
+        position: relative;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        @media only screen and (min-device-width : 0px) and (max-device-width : 102px) {
+            display: none;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 2px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,45 @@
+@import "../../index.scss";
+
+.navbar {
+    @include flex($justify:space-between);
+    color: white;
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $mainBackground;
+    z-index: 2;
+
+    h1 {
+        font-size: 2rem;
+        font-family: $syne;
+        font-weight: 600;
+        color: #FFF3B2;
+    }
+
+    nav>ul {
+        @include flex;
+        gap: 30px;
+        list-style-type: none;
+
+        li {
+            font-size: 1rem;
+            text-transform: capitalize;
+        }
+    }
+
+    >a {
+        border: 1px solid;
+        height: 50px;
+        width: 200px;
+        border-radius: 45px;
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        @include flex;
+        overflow: hidden;
+
+        button {
+            all: inherit;
+        }
+    }
+}

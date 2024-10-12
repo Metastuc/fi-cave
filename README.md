@@ -110,16 +110,16 @@ hospitals create or adds a patient using their name and that patient is issued a
     - See Backend Documentation [here](https://github.com/Metastuc/fi-cave/blob/main/Backend/README.md)
 
 - ### **NFT.Storage/IPFS**
-    - We used the nft.storage npm packed to interact and upload files to ipfs[see here](https://github.com/Metastuc/fi-cave/blob/main/frontend_fi/src/components/upload/Upload.jsx#L92) 
+    - We used the nft.storage npm packed to interact and upload files to ipfs[see here](https://github.com/Metastuc/fi-cave/blob/5c67929ada19814bb2a21a1d9dec35dd2a6ea054/frontend_fi/src/components/upload/Upload.jsx#L102) 
 
 
 - ### **Base Chain**
-    - The contract was <b style="color: orange">deployed on</b>this chain 
+    - The contract was <b style="color: orange">deployed on</b> this chain 
 
 
 - ### **Base OnChainKit**
     - <b style="color: orange">The Base OnChainkit</b>  was used to handle our base smart wallet, contract interaction and transaction functions.
-    see [Contract here]:(https://github.com/Metastuc/fi-cave/blob/main/frontend_fi/src/components/upload/Upload.jsx#L92)
+    see [Contract here](https://github.com/Metastuc/fi-cave/blob/main/frontend_fi/src/components/upload/Upload.jsx#L185)
 
 
 #

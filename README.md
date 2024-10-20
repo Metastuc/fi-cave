@@ -36,7 +36,7 @@ Files uploaded on Ficave can also be made open-source to serve as  research mate
 
 #
 ## Important/Live Hosted Project Links
-- **Hosted URL** > [https://ficave.on.fleek.co/](https://ficave.on.fleek.co/)
+- **Hosted URL** > [https://ficave.on-fleek.app/](https://ficave.on-fleek.app/)
 
 - **Github** > [https://github.com/Metastuc/fi-cave](https://github.com/Metastuc/fi-cave)
 

@@ -6,7 +6,7 @@ A decentralized medical documentation system built and secured on the blockchain
 Clone the project
 
 ```bash
-  git clone https://github.com/miraclemenikelechi/fi-cave
+  git clone https://github.com/Metastuc/fi-cave
 ```
 
 Go to the project directory

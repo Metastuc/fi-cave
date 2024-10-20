@@ -1,6 +1,7 @@
 import { faFileArrowUp, faSpinner, faTrash, } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NFTStorage } from "nft.storage";
+import { PinataSDK } from "pinata-web3"
 import { address, abi } from "../../constants";
 import { useContractWrite } from "wagmi";
 import axios from "axios";
@@ -97,21 +98,22 @@ const Upload = () => {
                         type="file"
                         onChange={async (event) => {
                             const
-                                NFT_STORE_API_KEY = process.env.REACT_APP_NFT_STORAGE,
 
-                                client = new NFTStorage({ token: NFT_STORE_API_KEY }),
+                                client = new PinataSDK({
+                                    pinataJwt: `${process.env.REACT_APP_PINATA_JWT}`,
+                                    pinataGateway: `${process.env.REACT_APP_GATEWAY_URL}`
+                                  }),
 
                                 file = event.target.files[0];
-
                             file.isUploading = true;
                             setFiles([...files, file]);
                             const
-                                icid = await client.storeBlob(file),
+                                icid = await client.upload.file(file),
 
                                 options = {
                                     method: "POST",
                                     headers: { "content-type": "application/json" },
-                                    data: { cid: icid, password: cid.password },
+                                    data: { cid: icid.IpfsHash, password: cid.password },
                                     url: "https://medarchive2.onrender.com/encode",
                                 };
                             await axios(options)

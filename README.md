@@ -11,7 +11,7 @@
 - [Technologies Used](#technologies-used)
     - [Base Chain](#base-chain)
     - [Base OnchainKit Kit](#base-onchainkit)
-    - [NFT.Storage/IPFS](#nftstorageipfs)
+    - [PinataSDK/IPFS](#pinatasdkipfs)
     - [Smart Contract](#solidity-smart-contracts)
     - [Backend Server/Api](#backend-serverapipython-flask)
 - [Important Live Links](#importantlive-hosted-project-links)
@@ -90,7 +90,7 @@ hospitals create or adds a patient using their name and that patient is issued a
 
  | <b><u>Stack</u></b> | <b><u>Usage Summary</u></b> |
  | :------------------ | :------------------------- |
- | **`NFT.Storage/IPFS`**| file upload/retrieval  |
+ | **`PinataSDK/IPFS`**| file upload/retrieval  |
  | **`Base OnChainKit`**       | Base smart wallet, smart contract calls, transactions       |
  | **`Base chain`** | Main contract deployed/Tracks all records|
  | **`Solidity`**      | Smart contract             |
@@ -109,8 +109,8 @@ hospitals create or adds a patient using their name and that patient is issued a
 
     - See Backend Documentation [here](https://github.com/Metastuc/fi-cave/blob/main/Backend/README.md)
 
-- ### **NFT.Storage/IPFS**
-    - We used the nft.storage npm packed to interact and upload files to ipfs[see here](https://github.com/Metastuc/fi-cave/blob/5c67929ada19814bb2a21a1d9dec35dd2a6ea054/frontend_fi/src/components/upload/Upload.jsx#L102) 
+- ### **PinataSDK/IPFS**
+    - We used the PinataSDK npm packed to interact and upload files to ipfs[see here](https://github.com/Metastuc/fi-cave/blob/5c67929ada19814bb2a21a1d9dec35dd2a6ea054/frontend_fi/src/components/upload/Upload.jsx#L102) 
 
 
 - ### **Base Chain**

@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { address as addr, abi } from "../../constants";
 import components from "../../components";
-import { useContractRead, useAccount } from "wagmi";
+// import  useIdentityContext  from "@coinbase/onchainkit/src/identity/components/IdentityProvider";
+import { useReadContract, useAccount } from "wagmi";
+// import { useReadContract } from "wagmi";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Record = () => {
+    // const { address: contextAddress } = useIdentityContext();
     const
         [inputs, setInputs] = useState({
             patientID: "",
@@ -18,9 +21,9 @@ const Record = () => {
         }),
 
         { address } = useAccount(),
-
+        
         [userData, setUserData] = useState([]),
-
+        
         [hashes, setHashes] = useState([]);
 
     useEffect(() => {
@@ -69,7 +72,7 @@ const Record = () => {
             }));
         },
 
-        contractRead = useContractRead({
+        {data} = useReadContract({
             mode: "recklesslyUnprepared",
             address: addr[84532].address,
             chainId: 84532,
@@ -78,6 +81,7 @@ const Record = () => {
             functionName: inputs.recordID != "" ? "getPatientRecord" : "getPatientRecords",
             overrides: { from: address },
             onSuccess(data) {
+                console.log(data)
                 setUserData(data);
             },
             onError(error) { console.log(error); }
@@ -99,7 +103,7 @@ const Record = () => {
                 description={data.description}
             />
         ));
-
+console.log(data)
     return (
         <section className={style.record}>
             <h3>access patient record</h3>
@@ -138,6 +142,7 @@ const Record = () => {
                     <button
                         onClick={async (event) => {
                             event.preventDefault();
+                        
                             await processHashes();
                             setInputs(prev => ({
                                 ...prev,
